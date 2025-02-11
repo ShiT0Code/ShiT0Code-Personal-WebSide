@@ -1,6 +1,7 @@
 // 检测系统颜色模式并切换
 function toggleColorScheme() {
     const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isB = null;
     if (isDarkMode) {
         document.body.classList.add('dark-mode');
     } else {
