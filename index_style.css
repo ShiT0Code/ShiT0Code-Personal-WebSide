@@ -123,6 +123,6 @@ footer {
 /* 深色模式下更换图标 */
 @media (prefers-color-scheme: dark) {
     .github-icon {
-        content: url('github-mark-white.svg'); /* 深色模式下使用白色图标 */
+        content: url('ShiT0Code-Personal-WebSite/github-mark-white.svg'); /* 深色模式下使用白色图标 */
     }
 }
