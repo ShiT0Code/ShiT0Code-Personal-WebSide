@@ -8,6 +8,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* 确保页面高度至少为视口高度 */
+    font-family: Arial, sans-serif;
 }
 
 /* 深色模式样式 */
@@ -16,6 +17,67 @@ body {
         background-color: black;
         color: white;
     }
+}
+
+/* 导航栏样式 */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    backdrop-filter: blur(10px); /* 毛玻璃效果 */
+    background-color: rgba(255, 255, 255, 0.8); /* 浅色模式下的半透明背景 */
+    color: black;
+    z-index: 1000;
+    display: flex;
+    justify-content: center; /* 水平居中 */
+}
+
+@media (prefers-color-scheme: dark) {
+    .navbar {
+        background-color: rgba(0, 0, 0, 0.8); /* 深色模式下的半透明背景 */
+        color: white;
+    }
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between; /* 保持品牌和链接之间的间距 */
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* 限制最大宽度 */
+}
+
+.navbar-brand {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+.navbar-links li a:hover {
+    color: #007bff; /* 链接悬停颜色 */
+}
+
+/* 主要内容区域样式 */
+main {
+    padding: 60px 20px; /* 为导航栏留出空间 */
+    flex: 1; /* 占据剩余空间 */
 }
 
 /* 页脚样式 */
@@ -39,8 +101,9 @@ footer {
     footer {
         border-top-color: #666; /* 深色模式下分隔线颜色 */
     }
+}
 
- /* GitHub链接样式 */
+/* GitHub链接样式 */
 .github-link {
     display: inline-block;
     margin-top: 10px;
@@ -49,9 +112,17 @@ footer {
     font-weight: bold; /* 加粗字体 */
 }
 
+/* GitHub图标样式 */
 .github-icon {
     width: 20px; /* 图标大小 */
     height: 20px;
     margin-right: 5px; /* 图标与文字的间距 */
     vertical-align: middle; /* 垂直居中 */
+}
+
+/* 深色模式下更换图标 */
+@media (prefers-color-scheme: dark) {
+    .github-icon {
+        content: url('github-mark-white.svg'); /* 深色模式下使用白色图标 */
+    }
 }

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下载 ShiT0Code 的软件</title>
+</head>
+<body>
+    <main>
+        <p>下载 快速启动栏</p>
+        <li><a href="Resources/Latest/Quick-Launch-Bar_0.0.3.0_x64_Debug_Test/Quick-Launch-Bar_0.0.3.0_x64_Debug.msix" download="Quick-Launch-Bar_0.0.3.0_x64_Debug.msix">下载安装包</a></li>
+        <li><a href="Resources/Latest/Quick-Launch-Bar_0.0.3.0_x64_Debug_Test/Dependencies/x64/Microsoft.WindowsAppRuntime.1.6.msix" download="Microsoft.WindowsAppRuntime.1.6.msix">下载运行时</a></li>
+        <li><a href="" onclick="downloadFile()">下载 .appinstaller 文件</a></li>
+
+    <script>
+        function downloadFile() {
+            // 创建一个Blob对象，类型为文本
+            const blob = new Blob([], { type: 'application/octet-stream' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = url;
+            a.download = 'Quick-Launch-Bar_x64.appinstaller'; // 设置下载文件名
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+        }
+    </script>
+    </main>
+</body>
+</html>
