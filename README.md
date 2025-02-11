@@ -1,2 +1,2 @@
-# Quick-Launch-Bar_Server
-Quick-Launch-Bar 的服务支持
+# ShiT0Code 的个人网站
+无
